@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,12 +119,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -173,9 +174,119 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111041223536_InitialCreate.cs" />
+    <Compile Include="Migrations\202111041223536_InitialCreate.designer.cs">
+      <DependentUpon>202111041223536_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051003279_AddedIdNumberColumnOnUsersTable.cs" />
+    <Compile Include="Migrations\202111051003279_AddedIdNumberColumnOnUsersTable.designer.cs">
+      <DependentUpon>202111051003279_AddedIdNumberColumnOnUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051045458_AddedLicenceCodeColumnOnUsersTable.cs" />
+    <Compile Include="Migrations\202111051045458_AddedLicenceCodeColumnOnUsersTable.designer.cs">
+      <DependentUpon>202111051045458_AddedLicenceCodeColumnOnUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051047396_AddedGenderColumnOnUsersTable.cs" />
+    <Compile Include="Migrations\202111051047396_AddedGenderColumnOnUsersTable.designer.cs">
+      <DependentUpon>202111051047396_AddedGenderColumnOnUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111051049397_AddedCreatedOnColumnOnUsersTable.cs" />
+    <Compile Include="Migrations\202111051049397_AddedCreatedOnColumnOnUsersTable.designer.cs">
+      <DependentUpon>202111051049397_AddedCreatedOnColumnOnUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111061544336_AddInstructorsTable.cs" />
+    <Compile Include="Migrations\202111061544336_AddInstructorsTable.designer.cs">
+      <DependentUpon>202111061544336_AddInstructorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111061634561_AddVehiclePictureColumnOnInstructorsTable.cs" />
+    <Compile Include="Migrations\202111061634561_AddVehiclePictureColumnOnInstructorsTable.designer.cs">
+      <DependentUpon>202111061634561_AddVehiclePictureColumnOnInstructorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111061642470_AddVehiclesTable.cs" />
+    <Compile Include="Migrations\202111061642470_AddVehiclesTable.designer.cs">
+      <DependentUpon>202111061642470_AddVehiclesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071318546_AddInstructorIdColumnOnVehiclesTable.cs" />
+    <Compile Include="Migrations\202111071318546_AddInstructorIdColumnOnVehiclesTable.designer.cs">
+      <DependentUpon>202111071318546_AddInstructorIdColumnOnVehiclesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071418506_AddInstructorIdColumnOnDrivingGroundsTable.cs" />
+    <Compile Include="Migrations\202111071418506_AddInstructorIdColumnOnDrivingGroundsTable.designer.cs">
+      <DependentUpon>202111071418506_AddInstructorIdColumnOnDrivingGroundsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071421593_AddDrivingGroundsTable.cs" />
+    <Compile Include="Migrations\202111071421593_AddDrivingGroundsTable.designer.cs">
+      <DependentUpon>202111071421593_AddDrivingGroundsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071435139_AddLearnersTable.cs" />
+    <Compile Include="Migrations\202111071435139_AddLearnersTable.designer.cs">
+      <DependentUpon>202111071435139_AddLearnersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071444410_AddPaymentsTable.cs" />
+    <Compile Include="Migrations\202111071444410_AddPaymentsTable.designer.cs">
+      <DependentUpon>202111071444410_AddPaymentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071457404_AddBookingIdColumnOnPaymentsTable.cs" />
+    <Compile Include="Migrations\202111071457404_AddBookingIdColumnOnPaymentsTable.designer.cs">
+      <DependentUpon>202111071457404_AddBookingIdColumnOnPaymentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071501522_AddLearnerIdColumnOnBookingsTable.cs" />
+    <Compile Include="Migrations\202111071501522_AddLearnerIdColumnOnBookingsTable.designer.cs">
+      <DependentUpon>202111071501522_AddLearnerIdColumnOnBookingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071503244_AddInstructorIdColumnOnBookingsTable.cs" />
+    <Compile Include="Migrations\202111071503244_AddInstructorIdColumnOnBookingsTable.designer.cs">
+      <DependentUpon>202111071503244_AddInstructorIdColumnOnBookingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071505288_AddVehicleIdColumnOnBookingsTable.cs" />
+    <Compile Include="Migrations\202111071505288_AddVehicleIdColumnOnBookingsTable.designer.cs">
+      <DependentUpon>202111071505288_AddVehicleIdColumnOnBookingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071509254_AddBookingsTable.cs" />
+    <Compile Include="Migrations\202111071509254_AddBookingsTable.designer.cs">
+      <DependentUpon>202111071509254_AddBookingsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071529532_AddReviewsTable.cs" />
+    <Compile Include="Migrations\202111071529532_AddReviewsTable.designer.cs">
+      <DependentUpon>202111071529532_AddReviewsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071531578_AddBookingIdColumnOnReviewssTable.cs" />
+    <Compile Include="Migrations\202111071531578_AddBookingIdColumnOnReviewssTable.designer.cs">
+      <DependentUpon>202111071531578_AddBookingIdColumnOnReviewssTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071555321_AddNotificationsTable.cs" />
+    <Compile Include="Migrations\202111071555321_AddNotificationsTable.designer.cs">
+      <DependentUpon>202111071555321_AddNotificationsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071558073_AddAdminIdColumnOnNotificationsTable.cs" />
+    <Compile Include="Migrations\202111071558073_AddAdminIdColumnOnNotificationsTable.designer.cs">
+      <DependentUpon>202111071558073_AddAdminIdColumnOnNotificationsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071559406_AddLearnerIdColumnOnNotificationsTable.cs" />
+    <Compile Include="Migrations\202111071559406_AddLearnerIdColumnOnNotificationsTable.designer.cs">
+      <DependentUpon>202111071559406_AddLearnerIdColumnOnNotificationsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071601192_AddInstructorIdColumnOnNotificationsTable.cs" />
+    <Compile Include="Migrations\202111071601192_AddInstructorIdColumnOnNotificationsTable.designer.cs">
+      <DependentUpon>202111071601192_AddInstructorIdColumnOnNotificationsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111071606400_AddAdministratorsTable.cs" />
+    <Compile Include="Migrations\202111071606400_AddAdministratorsTable.designer.cs">
+      <DependentUpon>202111071606400_AddAdministratorsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Tables\Administrators.cs" />
+    <Compile Include="Models\Tables\Bookings.cs" />
+    <Compile Include="Models\Tables\DrivingGrounds.cs" />
+    <Compile Include="Models\Tables\Instructors.cs" />
+    <Compile Include="Models\Tables\Learners.cs" />
+    <Compile Include="Models\Tables\Notifications.cs" />
+    <Compile Include="Models\Tables\Payments.cs" />
+    <Compile Include="Models\Tables\Reviews.cs" />
+    <Compile Include="Models\Tables\Vehicles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -252,6 +363,83 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202111041223536_InitialCreate.resx">
+      <DependentUpon>202111041223536_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051003279_AddedIdNumberColumnOnUsersTable.resx">
+      <DependentUpon>202111051003279_AddedIdNumberColumnOnUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051045458_AddedLicenceCodeColumnOnUsersTable.resx">
+      <DependentUpon>202111051045458_AddedLicenceCodeColumnOnUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051047396_AddedGenderColumnOnUsersTable.resx">
+      <DependentUpon>202111051047396_AddedGenderColumnOnUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111051049397_AddedCreatedOnColumnOnUsersTable.resx">
+      <DependentUpon>202111051049397_AddedCreatedOnColumnOnUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111061544336_AddInstructorsTable.resx">
+      <DependentUpon>202111061544336_AddInstructorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111061634561_AddVehiclePictureColumnOnInstructorsTable.resx">
+      <DependentUpon>202111061634561_AddVehiclePictureColumnOnInstructorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111061642470_AddVehiclesTable.resx">
+      <DependentUpon>202111061642470_AddVehiclesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071318546_AddInstructorIdColumnOnVehiclesTable.resx">
+      <DependentUpon>202111071318546_AddInstructorIdColumnOnVehiclesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071418506_AddInstructorIdColumnOnDrivingGroundsTable.resx">
+      <DependentUpon>202111071418506_AddInstructorIdColumnOnDrivingGroundsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071421593_AddDrivingGroundsTable.resx">
+      <DependentUpon>202111071421593_AddDrivingGroundsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071435139_AddLearnersTable.resx">
+      <DependentUpon>202111071435139_AddLearnersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071444410_AddPaymentsTable.resx">
+      <DependentUpon>202111071444410_AddPaymentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071457404_AddBookingIdColumnOnPaymentsTable.resx">
+      <DependentUpon>202111071457404_AddBookingIdColumnOnPaymentsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071501522_AddLearnerIdColumnOnBookingsTable.resx">
+      <DependentUpon>202111071501522_AddLearnerIdColumnOnBookingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071503244_AddInstructorIdColumnOnBookingsTable.resx">
+      <DependentUpon>202111071503244_AddInstructorIdColumnOnBookingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071505288_AddVehicleIdColumnOnBookingsTable.resx">
+      <DependentUpon>202111071505288_AddVehicleIdColumnOnBookingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071509254_AddBookingsTable.resx">
+      <DependentUpon>202111071509254_AddBookingsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071529532_AddReviewsTable.resx">
+      <DependentUpon>202111071529532_AddReviewsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071531578_AddBookingIdColumnOnReviewssTable.resx">
+      <DependentUpon>202111071531578_AddBookingIdColumnOnReviewssTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071555321_AddNotificationsTable.resx">
+      <DependentUpon>202111071555321_AddNotificationsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071558073_AddAdminIdColumnOnNotificationsTable.resx">
+      <DependentUpon>202111071558073_AddAdminIdColumnOnNotificationsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071559406_AddLearnerIdColumnOnNotificationsTable.resx">
+      <DependentUpon>202111071559406_AddLearnerIdColumnOnNotificationsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071601192_AddInstructorIdColumnOnNotificationsTable.resx">
+      <DependentUpon>202111071601192_AddInstructorIdColumnOnNotificationsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111071606400_AddAdministratorsTable.resx">
+      <DependentUpon>202111071606400_AddAdministratorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -285,7 +473,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

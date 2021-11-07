@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GroupT.Models
@@ -65,6 +66,19 @@ namespace GroupT.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "RSA ID Number")]
+        public string Id_Number { get; set; }
+
+        [Required]
+        [Display(Name = "Licence Code")]
+        public string Licence_Code{ get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public string Gender{ get; set; }
+
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +93,8 @@ namespace GroupT.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+     
     }
 
     public class ResetPasswordViewModel
