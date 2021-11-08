@@ -157,6 +157,7 @@ namespace GroupT.Controllers
                     Id_Number = model.Id_Number,
                     Licence_Code = model.Licence_Code,
                     Gender = model.Gender,
+                    Created_On = DateTime.Now,
                     
 
                 };

@@ -274,6 +274,10 @@
     <Compile Include="Migrations\202111071606400_AddAdministratorsTable.designer.cs">
       <DependentUpon>202111071606400_AddAdministratorsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111081257261_Test.cs" />
+    <Compile Include="Migrations\202111081257261_Test.designer.cs">
+      <DependentUpon>202111081257261_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -438,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111071606400_AddAdministratorsTable.resx">
       <DependentUpon>202111071606400_AddAdministratorsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111081257261_Test.resx">
+      <DependentUpon>202111081257261_Test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
