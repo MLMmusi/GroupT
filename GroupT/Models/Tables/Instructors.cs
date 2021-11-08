@@ -5,7 +5,7 @@ namespace GroupT.Models.Tables
 {
     public class Instructors
     {
-        //Constructors
+        //Constructor
         public Instructors(){
             Instructor_Id = Guid.NewGuid();
             Created_On = DateTime.Now;
